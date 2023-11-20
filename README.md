@@ -26,7 +26,11 @@ All the training and testing images for different MIP tasks used in this paper c
 ## 3. Test
 ### 🛠️  Clone this repository:
 ```
-    git clone https://github.com/JingyiXu404/MCSCNet.git
+    git clone https://github.com/JingyiXu404/TPAMI-DeepM2CDL.git
+```
+### 🛠️  Download pretrained models:
+```
+    https://drive.google.com/drive/folders/1Sef-rFosbzu40h9NH3J1wDyd-w4clfAj?usp=sharing
 ```
 ### 💓  For flash guided non-flash image denoising task
 **1. Prepare dataset**: If you do not use same datasets as us, place the test images in `Flash_Guide_Nonflash_Denoise/code/data/denoise/`.
