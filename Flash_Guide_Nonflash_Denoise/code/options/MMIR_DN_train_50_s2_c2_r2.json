@@ -1,0 +1,60 @@
+{
+  "task": "train" // taskname
+  ,
+  "gpu_ids": [ // gpu id
+  0
+  ],
+  "path": {
+    "root": "debug/N50",
+    "pretrained_netG":null // pretrained path
+  },
+  "data": {
+    "type": "denoising",
+    "n_channels": 3, // image channels
+    "train": {
+      "sigma": [50],
+      "dataroot_HX": "data/denoise/train_nonflash/",
+      "dataroot_HY":"data/denoise/train_flash/",
+      "H_size": 128, // patch size
+      "num_workers": 8,
+      "batch_size": 4 // batch size
+    },
+    "test": {
+      "sigma": [
+        50
+      ],
+      "dataroot_HX": "data/denoise/test_nonflash/",
+      "dataroot_HY": "data/denoise/test_flash/" // test path
+    }
+  },
+  "netG": {
+    "d_size": [5,3], // dictionary size
+    "x_iter": 2, // iteration number Jx
+    "y_iter": 2, // iteration number Jy
+    "rnn_iter": 2, // MIRM number N
+    "c_iter": 2, // scale number
+    "in_nc": 3, // image channel
+    "nc_x": [64,128,256,512],
+    "nb": 4 // number of residual blocks
+  },
+  "train": {
+    "manual_seed": 1000,
+    "reload_broadcast": false,
+    "G_optimizer_lr": 1e-4, // lr
+    "G_scheduler_milestones": [ // milestones
+      200000,
+      400000,
+      600000,
+      800000
+    ],
+    "G_scheduler_gamma": 0.5,
+    "checkpoint_test": 20,
+    "checkpoint_savemodel": 100,
+    "checkpoint_log": 100,
+    "checkpoint_saveimage": 100,
+    "checkpoint_visual": 100
+  },
+  "test": {
+    "visualize": true
+  }
+}
