@@ -1,0 +1,71 @@
+{
+  "task": "train" // taskname
+  ,
+  "gpu_ids": [ // gpu id
+    0
+  ],
+  "path": {
+    "root": "debug/MF",
+    "pretrained_netG":null // pretrained path
+  },
+  "data": {
+    "type": "multi_focus",
+    "n_channels": 3, // image channels
+    "train": {
+      "down_scale": [3],
+      "dataroot_HX": "data/multi-focus/train_label/",
+      "H_size": 200, // patch size
+      "num_workers": 8,
+      "batch_size": 2, // batch size
+      "cut_HMIN": 20,
+      "cut_WMIN": 20,
+      "cut_HMAX": 80,
+      "cut_WMAX": 80,
+      "radius_MIN": 1,
+      "radius_MAX": 5
+    },
+    "test": {
+      "down_scale": [
+        3
+      ],
+      "dataroot_LX": "data/multi-focus/test_A/",
+      "dataroot_HY": "data/multi-focus/test_B/" // test path
+    }
+  },
+  "netG": {
+    "d_size": [5,3], // dictionary size
+    "x_iter": 2, // stages
+    "y_iter": 2, // stages
+    "rnn_iter": 2, // stages
+    "c_iter": 2, // scales
+    "in_nc": 3, // image channel
+    "nc_x": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "nb": 4 // number of blocks
+  },
+  "train": {
+    "manual_seed": 300,
+    "reload_broadcast": false,
+    "G_optimizer_lr": 1e-4, // lr
+    "G_scheduler_milestones": [ // milestones
+      200000,
+      400000,
+      600000,
+      800000
+    ],
+    "G_scheduler_gamma": 0.5,
+    "checkpoint_test": 100,
+    "checkpoint_savemodel": 100,
+    "checkpoint_log": 400,
+    "checkpoint_saveimage": 100,
+    "checkpoint_visual":100
+  },
+  "test": {
+    "visualize": true,
+    "save_feature" : false
+  }
+}
