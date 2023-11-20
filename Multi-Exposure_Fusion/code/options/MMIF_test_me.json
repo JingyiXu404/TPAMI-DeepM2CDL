@@ -1,0 +1,63 @@
+{
+  "task": "test_color" // taskname
+  ,
+  "gpu_ids": [ // gpu id
+    0
+  ],
+  "path": {
+    "root": "debug/MMIF_ME_s2_c2_r2",
+    "pretrained_netG": "/home/zhangyutong/XJY/DeepMCDL/debug/MMIF_ME_s2_c2_r2/train/models/debug/57/" // pretrained path
+  },
+  "data": {
+    "type": "multi_exposure",
+    "n_channels": 3, // image channels
+    "train": {},
+    "test": {
+      "down_scale": [
+        4
+      ],
+      "dataroot_HX": "/home/zhangyutong/XJY/DCDicL_denoising-master/data/multi-exposure/test_label_100/",
+      "dataroot_LX": "/home/zhangyutong/XJY/DCDicL_denoising-master/data/multi-exposure/test_over_100/",
+      "dataroot_HY": "/home/zhangyutong/XJY/DCDicL_denoising-master/data/multi-exposure/test_under_100/" // test path
+    }
+  },
+  "netG": {
+    "d_size": [5,3], // dictionary size
+    "x_iter": 2, // stages
+    "y_iter": 2, // stages
+    "rnn_iter": 2, // stages
+    "c_iter": 2, // scales
+    "in_nc": 3, // image channel
+    "nc_x": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "nb": 4 // number of blocks
+  },
+  "train": {
+    "reload_broadcast": false,
+    "G_optimizer_lr": 1e-4, // lr
+    "G_scheduler_milestones": [ // milestones
+      200000,
+      400000,
+      600000,
+      800000
+    ],
+    "G_scheduler_gamma": 0.5,
+    "checkpoint_test": 5000,
+    "checkpoint_savemodel": 5000,
+    "checkpoint_log": 100,
+    "checkpoint_saveimage": 5000
+  },
+  "test": {
+    "visualize": true,
+    "save_feature" : false,
+    "save_dictionary": false,
+    "save_image": false,
+    "is_test": true,
+    "debug_num": "57",
+    "is_debug": true
+  }
+}
