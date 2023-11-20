@@ -5,8 +5,8 @@
     0
   ],
   "path": {
-    "root": "debug/MMIF_ME_s2_c2_r2",
-    "pretrained_netG": "/home/zhangyutong/XJY/DeepMCDL/debug/MMIF_ME_s2_c2_r2/train/models/debug/57/" // pretrained path
+    "root": "debug/ME",
+    "pretrained_netG": "../Results_models/" // pretrained path
   },
   "data": {
     "type": "multi_exposure",
@@ -16,9 +16,9 @@
       "down_scale": [
         4
       ],
-      "dataroot_HX": "/home/zhangyutong/XJY/DCDicL_denoising-master/data/multi-exposure/test_label_100/",
-      "dataroot_LX": "/home/zhangyutong/XJY/DCDicL_denoising-master/data/multi-exposure/test_over_100/",
-      "dataroot_HY": "/home/zhangyutong/XJY/DCDicL_denoising-master/data/multi-exposure/test_under_100/" // test path
+      "dataroot_HX": "data/multi-exposure/test_over/",
+      "dataroot_LX": "data/multi-exposure/test_over/",
+      "dataroot_HY": "data/multi-exposure/test_under/" // test path
     }
   },
   "netG": {
