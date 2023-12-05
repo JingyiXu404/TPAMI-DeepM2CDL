@@ -1,5 +1,5 @@
 # DeepM<sup>2</sup>CDL: Deep Multi-scale Multi-modal Convolutional Dictionary Learning Network
-- This is the official repository of the paper "DeepM<sup>2</sup>CDL: Deep Multi-scale Multi-modal Convolutional Dictionary Learning Network" from **IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)**. [[Paper Link]]([https://ieeexplore.ieee.org/abstract/document/9774926](https://www.computer.org/csdl/journal/tp/5555/01/10323520/1SewGo0cHC0), "Paper Link")
+- This is the official repository of the paper "DeepM<sup>2</sup>CDL: Deep Multi-scale Multi-modal Convolutional Dictionary Learning Network" from **IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)**. [[Paper Link]]([https://www.computer.org/csdl/journal/tp/5555/01/10323520/1SewGo0cHC0], "Paper Link")
 
 ![framework](./imgs/framework1.png)
 ![framework](./imgs/framework2.png)
