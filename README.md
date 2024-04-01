@@ -220,7 +220,13 @@ All the training and testing images for different MIP tasks used in this paper c
 ## 5. Citation
 If you find our work useful in your research or publication, please cite our work:
 ```
-release soon
+@article{deng2023deepm,
+  title={DeepM 2 CDL: Deep Multi-scale Multi-modal Convolutional Dictionary Learning Network},
+  author={Deng, Xin and Xu, Jingyi and Gao, Fangyuan and Sun, Xiancheng and Xu, Mai},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2023},
+  publisher={IEEE}
+}
 ```
 
 ## 6. Contact
